@@ -14,7 +14,7 @@ describe('create user', () => {
   it('should check all fields are available', (done) => {
     chai.request(server)
     .post('/api/v1/auth/create-user')
-    .set({'Authorization': 'Bearer ' + process.env.adminToken})
+    .set({'Authorization': 'Bearer ' + process.env.adminToken}) 
     .send(users.user1)
     .end((err, res) => {
       if(err) return done(err);

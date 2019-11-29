@@ -4,7 +4,7 @@ import chaiHttp from 'chai-http';
 
 import server from '../source/server';
 
-const expect = chai.expect;
+const expect = chai.expect; 
 chai.use(chaiHttp);
 
 const articleModel = {

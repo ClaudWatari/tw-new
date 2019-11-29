@@ -13,7 +13,7 @@ describe('login', () => {
   it('should not login a user if credentials missing', (done) => {
     chai.request(server)
     .post('/api/v1/auth/signin')
-    .set({'Authorization': 'Bearer ' + process.env.adminToken})
+    .set({'Authorization': 'Bearer ' + process.env.adminToken}) 
     .send(userModel.user4)
     .end((err, res) => {
       expect(res.status).to.equal(409);

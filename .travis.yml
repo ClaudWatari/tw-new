@@ -17,3 +17,9 @@ before_script:
 
 script:
 - npm run test
+
+env:
+  global:
+    - adminToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNsYXVkQGFkbWluLnR3IiwiaWQiOjEwLCJhZG1pbiI6InRydWUiLCJpYXQiOjE1NzQ5OTIzNzQsImV4cCI6MTU3NTI1MTU3NH0.RTT4pCalwjIIB59hy_4Rn5LtU3XDoppvsFuZMDseEZ8
+
+    
