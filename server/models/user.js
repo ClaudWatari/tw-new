@@ -1,7 +1,17 @@
 const users = {
-  thisUser: {
+  user1: {
+    firstName: '',
+    lastName: '',
+    email: '', 
+    password: '', 
+    gender: '', 
+    jobRole: '', 
+    department: '', 
+    address: '',
+  },
+  user2: {
     firstName: 'Claud',
-	lastName: 'Watari',
+    lastName: 'Watari',
     email: 'claudwatari95@gmail.com', 
     password: 'password', 
     gender: 'male', 
@@ -10,9 +20,9 @@ const users = {
     address: 'Nairobi',
     admin: true,
   },
-  otherUser: {
+  user3: {
     firstName: 'Claud',
-	lastName: 'Watari',
+    lastName: 'Watari',
     email: 'claud@gmail.com', 
     password: 'password', 
     gender: 'male', 
@@ -20,6 +30,18 @@ const users = {
     department: 'Engineering', 
     address: 'Nairobi',
     admin: false,
+  },
+  user4: {
+    email: '', 
+    password: '',
+  },
+  user5: {
+    email: 'nonexistent@email.example', 
+    password: process.env.adminPassword,
+  },
+  user6: {
+    email: process.env.adminPassword, 
+    password: 'randompassword',
   },
 };
 

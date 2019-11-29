@@ -96,7 +96,7 @@ const createUser = (req, res, next) => {
             email: email,
             admin: false,
           }, process.env.secret_token, {
-            expiresIn: '1h',
+            expiresIn: '72h',
           });
 
           const query = `INSERT INTO 
@@ -181,7 +181,7 @@ const logIn = (req, res, next) => {
           id: reslt.rows[0].id,
           admin: reslt.rows[0].admin,
         }, process.env.secret_token, {
-          expiresIn: '1h'
+          expiresIn: '72h'
         });
         return res.status(200).json({
           'status': 'success',

@@ -23,9 +23,9 @@ describe('add article', () => {
     chai.request(server)
     .post('/api/v1/articles')
     .send(articleModel.article1)
+    .set({'Authorization': 'Bearer ' + process.env.adminToken})
     .end((err, res) => {
-      // expect(res.status).to.equal(409);
-      expect(res).to.be.a('object');
+      expect(res.status).to.equal(409);
       if (err) return done(err);
       done();
     });
@@ -35,9 +35,9 @@ describe('add article', () => {
     chai.request(server)
     .post('/api/v1/articles')
     .send(articleModel.article2)
+    .set({'Authorization': 'Bearer ' + process.env.adminToken})
     .end((err, res) => {
-      // expect(res.status).to.equal(201);
-      expect(res).to.be.a('object');
+      expect(res.status).to.equal(201);
       if (err) return done(err);
       done();
     });

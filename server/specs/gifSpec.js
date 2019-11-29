@@ -26,10 +26,10 @@ describe('add gif', () => {
   it('should check image and title are available', (done) => {
     chai.request(server)
     .post('/api/v1/gifs')
+    .set({'Authorization': 'Bearer ' + process.env.adminToken})
     .send(gifModel.gif1)
     .end((err, res) => {
-      // expect(res.status).to.equal(409);
-      expect(res).to.be.a('object');
+      expect(res.status).to.equal(409);
       if (err) return done(err);
       done();
     });

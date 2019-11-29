@@ -13,30 +13,30 @@ describe('login', () => {
   it('should not login a user if credentials missing', (done) => {
     chai.request(server)
     .post('/api/v1/auth/signin')
-    .send(userModel.user5)
+    .set({'Authorization': 'Bearer ' + process.env.adminToken})
+    .send(userModel.user4)
     .end((err, res) => {
-      // expect(res.status).to.equal(409);
-      expect(res).to.be.a('object');
+      expect(res.status).to.equal(409);
       done();
     })
   });
   it('should not login a user if invalid email', (done) => {
     chai.request(server)
     .post('/api/v1/auth/signin')
-    .send(userModel.user6)
+    .set({'Authorization': 'Bearer ' + process.env.adminToken})
+    .send(userModel.user5)
     .end((err, res) => {
-      // expect(res.status).to.equal(401);
-      expect(res).to.be.a('object');
+      expect(res.status).to.equal(401);
       done();
     });
   });
   it('should return error if unable to verify password', (done) => {
     chai.request(server)
     .post('/api/v1/auth/signin')
-    .send(userModel.user7)
+    .set({'Authorization': 'Bearer ' + process.env.adminToken})
+    .send(userModel.user6)
     .end((err, res) => {
-      // expect(res.status).to.equal(401);
-      expect(res).to.be.a('object');
+      expect(res.status).to.equal(401);
       done();
     });
   });
