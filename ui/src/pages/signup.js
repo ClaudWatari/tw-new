@@ -68,7 +68,7 @@ class Signup extends Component {
 
     handleSubmit(event) {
       event.preventDefault();
-      fetch('http://localhost:4000/api/v1/auth/create-user', {
+      fetch('https://t-w-app.herokuapp.com//api/v1/auth/create-user', {
         method: "POST",
         body : JSON.stringify({
           firstName: this.state.firstName,
