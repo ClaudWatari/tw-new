@@ -57,7 +57,7 @@ class Feed extends Component {
       this.postComment = (event) => {
         event.preventDefault();
         console.log(event.target.id);
-        fetch(`http://localhost:4000/api/v1/articles/${event.target.id}/comments`, {
+        fetch(`https://t-w-app.herokuapp.com//api/v1/articles/${event.target.id}/comments`, {
           method: "POST",
           body : JSON.stringify({ comment: this.state.itemComment, articleid: event.target.id, loggedUser: this.state.loggedUser }),
           headers: {
