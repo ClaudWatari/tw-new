@@ -24,3 +24,5 @@ env:
     - secret_token: secret_key
     - Cloudinary_Secret: dbua0HN_5CvHmnTChkvP2plHHVk
     
+after_success:
+    - npm run coverage
