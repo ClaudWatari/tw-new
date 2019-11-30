@@ -26,7 +26,7 @@ class Feed extends Component {
 
       if(this.state.token === '' || !this.state.token || this.state.token.length < 50) return window.location = '/login';
       
-      fetch('https://t-w-app.herokuapp.com//api/v1/feed', {
+      fetch('https://t-w-app.herokuapp.com/api/v1/feed', {
       	headers: {
       	  "Content-Type": "application/json",
           "Accept": "application/json",
