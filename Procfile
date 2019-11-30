@@ -1,1 +1,1 @@
-web: node es6/index.js
+web: node server/es6/index.js && npm run dev
