@@ -13,7 +13,8 @@
     "coverage": "npm test && nyc report --reporter=text-lcov | coveralls",
     "dev": "react-scripts build",
     "dev-test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "cd ui && npm install && npm run build"
   },
   "keywords": [
     "teamwork",
