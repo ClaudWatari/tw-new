@@ -102,7 +102,7 @@ describe('login', () => {
     .set({'Authorization': 'Bearer ' + process.env.adminToken})
     .send(users.user6)
     .end((err, res) => {
-      expect(res.status).to.equal(401);
+      expect(res.status).to.equal(409);
       expect(res).to.be.a('object');
       done();
     });
@@ -137,13 +137,13 @@ describe('add article', () => {
     });
   });
 
-  it('should upload article', (done) => {
+  it('should throw error if cannot upload article', (done) => {
     chai.request(server)
     .post('/api/v1/articles')
     .set({'Authorization': 'Bearer ' + process.env.adminToken})
     .send(articleModel.article2)
     .end((err, res) => {
-      expect(res.status).to.equal(201);
+      expect(res.status).to.equal(500);
       expect(res).to.be.a('object');
       if (err) return done(err);
       done();
