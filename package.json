@@ -12,7 +12,7 @@
     "lint": "eslint **",
     "coverage": "npm test && nyc report --reporter=text-lcov | coveralls",
     "dev": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts ui/build/index.html",
     "dev-test": "react-scripts test",
     "eject": "react-scripts eject"
   },
