@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "nodemon server/es6/index.js",
-    "test": "mocha --exit server/es6/tests.js",
+    "test": "nyc mocha --exit server/es6/tests.js",
     "lint": "eslint **",
     "coverage": "npm test && nyc report --reporter=text-lcov | coveralls"
   },
