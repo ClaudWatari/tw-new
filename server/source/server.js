@@ -28,7 +28,13 @@ app.use(
 
 app.use(router);
 
-app.use(express.static(path.join(__dirname, 'ui/build')));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'ui/build')));
+	
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'ui/build', 'index.html'));
+  });
+}
 
 app.listen(process.env.PORT || 4000, () => {
 	console.log('Listening on port 4000');
