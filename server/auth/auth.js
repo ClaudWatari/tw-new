@@ -1,7 +1,5 @@
 import jwt from 'jsonwebtoken';
 
-import config from '../config';
-
 const authAdmin = (req, res, next) => {
   let token = req.header('authorization');
 

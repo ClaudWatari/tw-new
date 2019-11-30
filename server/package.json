@@ -7,8 +7,8 @@
     "node": "10.x"
   },
   "scripts": {
-    "start": "nodemon es6/index.js",
-    "test": "mocha --exit es6/tests.js",
+    "start": "nodemon server/es6/index.js",
+    "test": "nyc mocha --exit server/es6/tests.js",
     "lint": "eslint **",
     "coverage": "npm test && nyc report --reporter=text-lcov | coveralls"
   },

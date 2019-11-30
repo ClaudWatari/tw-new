@@ -4,6 +4,8 @@ import jwt from 'jsonwebtoken';
 
 import { pool } from '../config';
 
+dotenv.config();
+
 const checkTableGifs = (req, res, next) => {
   const query = `CREATE TABLE gifComments (commentId SERIAL PRIMARY KEY,
     comment VARCHAR(255), madeBy VARCHAR(50), Ogif INT,
@@ -123,5 +125,5 @@ const addArticleComment = (req, res) => {
 };
 
 export default {
-	addGifComment, addArticleComment
+	addGifComment, addArticleComment, checkTableArticles, checkTableGifs
 }

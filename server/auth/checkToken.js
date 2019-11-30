@@ -1,7 +1,5 @@
 import jwt from 'jsonwebtoken';
 
-import config from '../config';
-
 const checkToken = (req, res, next) => {
   let token = req.header('authorization');
 
@@ -15,8 +13,7 @@ const checkToken = (req, res, next) => {
           message: 'Invalid token'
         });
       } else {
-        req.decoded = decoded;  //{ this.state.article.map((article, key) => (<article className = 'article-article' key = { article.id }>{ article.article }</article>)) } https://res.cloudinary.com/dzdqe8iow/image/upload/v1573523580/
-                // this.state.feed.map((item, key) => <article key = {item.id}>{item.imageUrl}</article>)
+        req.decoded = decoded;
         next();
       }
     });

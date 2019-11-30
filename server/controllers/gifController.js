@@ -121,7 +121,7 @@ const viewSpecificGif = (req, res) => {
         'error': 'not found',
       })
     }
-    res.status(201).json({
+    res.status(200).json({
       'success': true,
       'data': {
         'message': 'gif retrieved successfully',
