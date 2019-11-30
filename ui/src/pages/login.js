@@ -34,7 +34,7 @@ class Login extends Component {
 
     handleSubmit(event) {
       event.preventDefault();
-      fetch('http://localhost:4000/api/v1/auth/signin', {
+      fetch('https://t-w-app.herokuapp.com//api/v1/auth/signin', {
         method: "POST",
         body : JSON.stringify({ email: this.state.email, password: this.state.password }),
         headers: {
