@@ -2,6 +2,8 @@ import express from 'express';
 
 import router from '../routes/routes';
 
+import path from 'path';
+
 import bodyParser from 'body-parser';
 
 import cors from 'cors';
@@ -25,6 +27,8 @@ app.use(
 );
 
 app.use(router);
+
+app.use(express.static(path.join(__dirname, 'ui/build')));
 
 app.listen(process.env.PORT || 4000, () => {
 	console.log('Listening on port 4000');
